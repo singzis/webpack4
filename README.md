@@ -184,4 +184,10 @@ new HtmlWebpackPlugin({
 待补充...
 
 ## webpack-react 基础配置
+
 [react-webpack4.0配置](https://github.com/Singz72/webpack4/tree/master/React-webpack4.0)
+
+
+## webpack-vue 基础配置
+
+待更新
