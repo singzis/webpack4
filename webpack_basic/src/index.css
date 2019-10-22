@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#box {
+    width:100%;
+}
+#box:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#box div {
+    width:4rem;
+    min-height:4rem;
+    float:left;
+    font-size:36px;
+    line-height:4rem;
+    text-align:center;
+    color:white;
+}
+#box div:nth-child(1){
+    background:red;
+}
+#box div:nth-child(2){
+    background:blue;
+}
+#box div:nth-child(3){
+    background:green;
+}
+#box div:nth-child(4){
+    background:hotpink;
+} 

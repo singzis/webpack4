@@ -1,0 +1,6 @@
+webpack_basic/node_modules/
+webpack_basic/dist/
+webpack_basic/yarn.lock
+index.html
+style.css
+.DS_Store
