@@ -1,6 +1,7 @@
 node_modules/
 dist/
 yarn.lock
-.DS_Store
+.vscode/
+index.html
 style.css
 .DS_Store
