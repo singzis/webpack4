@@ -1,50 +1,31 @@
-虽然能单独起一个react的webpack配置，但是用官方的准无误，其余的插件再根据需求安装
+手动记一个react相关的webpack工具，方便多次使用
+相关依赖可见package.json
 
-但为了学习，还是先不使用官方cli的情况下手动配置
+目前的方案是可行的，但其中存在一些问题以及以后可能存在的问题，这里做个记录，便于学习和记忆
 
-基于之前简单webpack配置
-
-文件结构
-
-```
-  ├── public
-  │   └── index.html      # html 模板
-  ├── src
-  │   ├── assets          # 静态资源
-  │   │   └── logo.png
-  │   ├── components      # 组件
-  │   │   └── App.js
-  │   ├── index.js        # 入口文件
-  │   └── styles
-  │       └── index.css
-  ├── .babelrc
-  ├── package.json
-  ├── postcss.config.js
-  └── webpack.config.js
-```
-
-也需要更改一些地方
-
-.babelrc文件下
-
-```
-{
-  "presets":[
-    "@babel/preset-env",
-    "@babel/preset-react"
+1.打包后文件过大的处理方法
+2.postcss-loader的警告处理
+  主要是在build中，webpack发出的一种警告（也并没有加warning）
+  `You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing`
+  查找的原因，其实目前也没看懂，就是在postcss.config.js中加入一个插件`require('postcss-import')`
+  
+  ```js
+  module.exports = {
+    plugins: [
+      require('postcss-import'),
+      require('precss'),
+      require('cssnano')
     ]
- }
-```
+  }
+  ```
+  [原答案](https://github.com/postcss/postcss/issues/1247#issuecomment-467965813)，可能也有不同的解决方法，但这个目前确实帮我解决了这个问题
+3.optimization的使用方法
+4.代码分离的一些方法
+5.source mapping
+6.待更新
 
-建议package.json下开启实时更新
 
-```
-"start": "webpack-dev-server --mode development --open"
-```
 
-需要手动更新一些依赖
 
-```
-yarn add react react-dom -S
-yarn add @babel/preset-react -D
-```
+
+
